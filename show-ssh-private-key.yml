@@ -1,0 +1,14 @@
+---
+- name: Obtener y mostrar la clave privada SSH desde una credencial
+  hosts: localhost
+  tasks:
+    - name: Obtener la clave privada SSH encriptada de la credencial
+      ansible.builtin.set_fact:
+        encrypted_private_key: "{{ lookup('community.general.awx.credential', 'id=ID_CREDENCIAL') }}"
+
+    - name: Desencriptar la clave privada SSH
+      ansible.builtin.debug:
+        msg: "La clave privada SSH desencriptada es {{ encrypted_private_key.ssh_private_key }}"
+
+  vars:
+    ID_CREDENCIAL: "130"
