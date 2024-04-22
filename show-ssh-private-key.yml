@@ -12,5 +12,5 @@
       ansible.builtin.debug:
         msg: "La clave privada SSH es {{ credential_info.inputs.ssh_key_data }}"
 
-    vars:
+  vars:
     Nombre_de_tu_credencial: "satowerie"
