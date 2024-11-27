@@ -1,0 +1,10 @@
+- name: Hello World Sample
+  hosts: all
+  tasks:
+    - name: Wait for 1 minute
+      wait_for:
+        timeout: 60
+
+    - name: Hello Message
+      debug:
+        msg: "Hello World!"
