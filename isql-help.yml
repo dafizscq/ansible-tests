@@ -1,5 +1,6 @@
 - name: Comando help de isql
   hosts: localhost
+  gather_facts: false
   tasks:
     - name: Isql help
       ansible.builtin.command: /usr/bin/isql --help
