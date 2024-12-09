@@ -1,0 +1,5 @@
+- name: Comando help de isql
+  hosts: localhost
+  tasks:
+    - name: Isql help
+      ansible.builtin.command: /usr/bin/isql --help
