@@ -4,3 +4,8 @@
   tasks:
     - name: Isql help
       ansible.builtin.command: /usr/bin/isql --help
+      register: isql_help
+
+    - name: Mostrar resultado del comando isql help
+      ansible.builtin.debug:
+        msg: "{{ isql_help.stdout }}"
